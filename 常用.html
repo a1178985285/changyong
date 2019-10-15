@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+								//vue-cli3安装
+		// npm install -g @vue/cli
+		// npm install -g cnpm -registry=https://registry.npm.taobao.org 
+		// vue create 名字
+		
+		//Vue传参
+		//   this.$router.push({path:"./b",query:{pass:this.pass}})
+		// 接受
+		// 	this.$route.query.pass
+		
+							//时间戳转换
+		// function formatDate(date){
+		//         date = new Date(date);
+		//         var y=date.getFullYear();
+		//         var m=date.getMonth()+1;
+		//         var d=date.getDate();
+		//         var h=date.getHours();
+		//         var m1=date.getMinutes();
+		//         var s=date.getSeconds();
+		//         m = m<10?("0"+m):m;
+		// 		 m1 = m1<10?("0"+m1):m1;
+		//         d = d<10?("0"+d):d;
+		// 		s = s<10?("0"+s):s;
+		//         return y+"-"+m+"-"+d+" "+h+":"+m1+":"+s;
+		//     }
+		//   	console.log(formatDate(1570758848*1000));
+		
+						//vue watch监听新值旧值
+		 //  watch: {
+		 //     noymod(o, n) {
+		 // o新  n旧
+		 //     },
+		 // }
+
+								//vuex
+			// 					main.js
+			// import store from './vuex/'
+			// 						app.vue
+			// import Vue from 'vue'
+			// import Vuex from 'vuex'
+			//						vuex
+			// 	const state = {		
+			// 				apis:"",
+			// 			}
+			// 	const mutations={
+			// 				add(state ,参数){
+			// 			}
+			// 			}
+			// 			
+			// 	export default new Vuex.Store({
+			// 				state,
+			// 				mutations,
+			// 			})
+			
+			// 					在app.vue created中 解决vuex刷新页面丢参数
+			// created() {
+			//     //在页面刷新时将vuex里的信息保存到localStorage里
+			//     window.addEventListener("beforeunload", () => {
+			//       localStorage.setItem("messageStore", JSON.stringify(this.$store.state));
+			//     });
+			// 
+			//     //在页面加载时读取localStorage里的状态信息
+			//     localStorage.getItem("messageStore") &&
+			//       this.$store.replaceState(
+			//         Object.assign(
+			//           this.$store.state,
+			//           JSON.parse(localStorage.getItem("messageStore"))
+			//         )
+			//       );
+			//   }
+
+				// 移动端touchstart、touchmove、touchend事件
+				// 鼠标   ousedown、mousemove、mouseup
+								
+									//双向绑定class
+				// v-bind:class="[value.userinfo.id==uid ?'chat-room-info-img-right':'chat-room-info-img' ]"
+				
+										//axios拼接
+				// this.axios.get("http://192.168.31.172/index/index/login?username="+this.formInline.username+"&key="+this.formInline.key)
+				//uid
+				// 存uid    localStorage.setItem("uid",res.data.data.id),  
+				// 清空     window.localStorage.removeItem("uid", "gid", "rootname");
+				//网页禁止拖拽
+				// <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+				
+									//图片拼接
+			// img = "<img src='" + file.content + "'>";
+				
+								//判断用户是刷新页面,进入页面
+			//0通过页面访问  1刷新 2通过后退访问
+			 // if (window.performance.navigation.type == 1) {
+			 //        console.log("页面被刷新")
+			 //      }else{
+			 //        console.log("首次被加载")
+			 //      }
+				 
+							//匹配出img 转换为图片
+		  //<p ref="msgcontent" class="pi">{{item.msgtext}}</p>
+		   // if (this.list.length > 0) {
+		   //       var msgcontent = this.$refs.msgcontent;
+		   //       msgcontent.forEach(element => {
+		   //         if (element.innerText.split("=")[0] == "<img src") {
+		   //           element.innerHTML = "[图片]";
+		   //         }
+		   //       });
+		   //     }
+				   
+							//搜索好友
+				//let that = this;
+			   //   var arr = that.list;
+			   //   var newarr = [];
+			   //   for (var i = 0; i < arr.length; i++) {
+			   //     if (arr[i].usernick.indexOf(that.search) >= 0) {
+			   //       newarr.push(arr[i]);
+			   //     }
+			   //     if (that.search == "") {
+			   //       newarr = [];
+			   //     }
+			   //   }
+			   //   that.newsearchList = newarr;
+			   //   console.log(that.newsearchList);
+			   // },
+					   
+					   //键盘按下回车事件,不能发空格开头
+		//onkeyup="this.value=this.value.replace(/^\s+/,'')"
+			
+			
+	</script>
+</html>

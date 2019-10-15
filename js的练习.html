@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+	</head>
+	<body>
+		<a href="http://104.202.61.194/uploads/msg/20191004/e10666db6038f944c1bc5e15e6666250.jpg" download='click'>大多数的</a>
+		<!-- 	<p src='http://104.202.61.194/uploads/msg/20191004/e10666db6038f944c1bc5e15e6666250.jpg'>22222</p>
+	<img src="http://104.202.61.194/uploads/msg/20191004/e10666db6038f944c1bc5e15e6666250.jpg" alt="">
+	<img src="./f65811247b3218d8a903fed9f2f6003.jpg" alt=""> -->
+
+		<hr>
+		<div id="add">添加</div>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		
+
+
+	</body>
+</html>
+<script>
+	//			闭包
+	// function p1(){
+	// 	var pp=200
+	// 	 function p2(){
+	// 		return pp+2000
+	// 	}
+	// 	return p2()
+	// }
+	// console.log(p1())
+	//或者这样
+	// var p3=p1()
+	// console.log(p3)
+
+	//拓展运算符是浅拷贝
+	//浅拷贝 浅拷贝是拷贝了对象的引用,只复制了引用地址,并非堆里面的值,数组和对象一样
+	// var  arr6=[1,2,3,4]
+	// arr7=arr6
+	// console.log(arr6===arr7)
+	//一起改变
+	// arr6[0]=0;
+	// console.log(arr6,arr7)
+	//拓展运算符是浅拷贝
+	// var a1=[1,2,5]
+	// var a3=[...a1]
+	// console.log(a3)
+
+	// //深拷贝的方法   用JSON.stringify和JSON.parse
+	// var a1= [1,2,3,4]
+	// a2=JSON.stringify(a1)
+	// a1[3]=10
+	// console.log(a1)
+	// console.log(JSON.parse(a2))
+
+	//数组合并  前一个a1是合并后的数组1,2,3,4,5,6
+	// var a1=[1,2,3]
+	// var a2=[4,5,6]
+	// a1.push.apply(a1,a2)
+	// console.log(a1)
+	// console.log(a2)
+
+	//数组合并  会返回一个新数组 concat性能好
+	// var a1=[1,2,3]
+	// var a2=[4,5,6]
+	// var a3=a1.concat(a2)
+	// console.log(a3)
+	
+	// var a1=[{name:"zhang",age:16},{name:"li",age:12}];
+	// var a2=[{name:"55541",age:20},{name:"555",age:10}];
+	// var a3=a1.concat(a2)
+	// console.log(a3)
+
+	//对象的合并  o1也会被改变
+	// var o1={name:"张三",age:16};
+	// var o2={city:"chen"}
+	// var  o3= Object.assign(o1,o2)
+	// console.log(o3)
+
+	//幂运算 平方
+	// var a=3;				
+	// var b=a**3				
+	// console.log(b)
+	
+	//set 数组去重
+	// var  a1=[1,1,1,1,1,2]
+	// var a2=Array.from(new Set(a1))  
+	// console.log(a2)
+	
+	//字符串拼接
+	// var str1="fdffdf";
+	// var str2="dscxcxcxcx"
+	// //把str1连接到str2上
+	// console.log(str1+str2);
+	// console.log(typeof(str1+str2));
+	
+	//获取当前的时间戳
+	// var d= Date.parse(new Date())
+	// console.log(d)
+	// 
+	// //获取当前的时间
+	// var d=new Date()
+	// console.log(d)
+	
+	// function abb(){
+	// 	console.log("线输出的")
+	// };
+	// 
+	// setTimeout(abb(),10000)
+
+		//对象增删改
+	// var a={name:"dsda",age:"555"};
+	// //修改
+	// a.name="name";
+	// //添加
+	// a.city="city";
+	// //删除
+	// delete a.name
+	// console.log(a)
+	
+	
+	//删除函数
+	// function add(){
+	// 	console.log(2233)
+	// }
+	// console.log(add())
+	// // 		arr.push( 'A', 'B' );
+	// 		console.log( arr ); 
+
+	//splice   改变原来的数组
+	//第一个参数,从哪里开始删除或添加
+	//第二个参数（要删除的个数）
+	//第三个参数,便是要添加的元素
+	// var a=[1,2,3,4,5];
+	// a.splice(4,1)
+	// console.log(a)
+	
+	//pop push shift  unshift  都会改变原数组
+	// var a=[1,2,3,4,5];
+	// var b=a.length
+	// for (var i = 0; i <= b; i++) {
+	// 	a.unshift(0)
+	// }
+	// console.log(a)
+	
+	
+	//join分割  不会改变原数组,会把数组转换成字符串
+	// var a=[1,2,3,4,5];  
+	// var b=a.join("")
+	// console.log(typeof(b))
+
+	
+	//split 字符串转换成数组  " "中间有空格,连接在一起,""没空格,分割开
+	// var a="123456"
+	// var b=a.split(" ")
+	// console.log(b)
+	
+	
+	// var o={name:"ddsd",age:4444,city:"ddasd"}
+
+	
+	
+	// 		
+	// 		var rrr = [];
+	// 		rrr.push( 'A', 'B' );
+	// 		console.log( rrr ); // output [ 'A', 'B' ];
+	// console.log(arr.reverse())
+	// var newarr=[];
+	// for (var i=0;i<=arr.length;i++){
+	// 	if(newarr.indexOf(arr[i]) == -1){
+	// 	            newarr.push(arr[i])
+	// 	        }
+	// }
+	//   console.log(newarr) 
+	//当前时间
+
+
+	//时间戳
+	// 	var times=Date.parse(new Date())  
+	// 
+	// 	console.log(times)
+	// 	//时间戳转换
+	// 	var timeO=45444444446662;
+	// 	var timep=new Date(timeO)
+	// 	console.log(timep)
+
+	
+	// 
+	// var avv=[1,2,4]
+	// var app=[...avv]
+	// var bpp=avv.find(function(value){
+	// 	return value>=2
+	// })
+	// console.log(bpp)
+	// for (let key  in app ){
+	// 	console.log(app)
+	// }
+
+
+	// function runAsync() {
+	// 	var p = new Promise(function(resolve, reject) {
+	// 		//做一些异步操作
+	// 		setTimeout(function() {
+	// 			console.log('执行完成');
+	// 			resolve('随便什么数据');
+	// 		}, 2000);
+	// 	});
+	// 	return p;
+	// }
+	// runAsync().then(function(data) {
+	// 	console.log(data)
+	// })
+
+
+
+
+
+	// function user() {
+	// 	var name = 'wangxi'
+	// 	return function getName() {
+	// 		return name
+	// 	}
+	// }
+	// var userName = user()() // userName 变量中始终保持着对 name 的引用
+	// console.log(userName)
+// 
+// 	var name = 'Schopenhauer'
+// 
+// 	function getName() {
+// 		console.log(name)
+// 	}
+// 
+// 	function myName() {
+// 		var name = 'wangxi'
+// 		getName()
+// 	}
+// 	myName()
+// 
+	// 
+	// function  p1(){
+	// 	var  pp=522
+	// 	 return function p2(){
+	// 		return pp=pp+Number(1000)
+	// 	}
+	// 	p2()
+	// }
+	// 
+	// var p9=p1()()
+	// console.log(p9)
+
+	// function f1(){
+	// 	var num=10; 
+	// 		return function f2(){
+	// 			return num+10
+	// 		}
+	// 		f2();
+	// 	}
+	// 
+	// var f3=f1()()
+	// 	console.log(f3)
+
+
+
+
+
+	// function setCookieValue(key,value){
+	//     var date = new Date();
+	//      var dataO=date.setTime(date.getTime()+100*24*3600*1000);
+	// 	console.log(date.getTime())
+	// }
+	// 
+	// setCookieValue()
+	// 
+	// 
+	//正则
+
+	// 
+	// var str = 'abc123de45fgh6789qqq111';
+	// var str = 'bbc123de45fgh6789qqq111';
+	// var reg=/^a/;
+	// console.log(str.match(reg))
+
+
+	//搜索
+</script>
