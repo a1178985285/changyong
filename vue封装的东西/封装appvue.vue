@@ -69,7 +69,6 @@
 			console.log(this.websocket)
 	    　　　　   },
 	  },
-	  
 	  components: {
 	    name: "App",
 	  }
