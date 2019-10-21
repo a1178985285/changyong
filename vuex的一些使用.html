@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+					//在app.vue里面写上 ,可以刷新页面参数还在
+	//   created() {
+	//     //在页面刷新时将vuex里的信息保存到localStorage里
+	//     window.addEventListener("beforeunload", () => {
+	//       localStorage.setItem("messageStore", JSON.stringify(this.$store.state));
+	//     });
+	
+	//     //在页面加载时读取localStorage里的状态信息
+	//     localStorage.getItem("messageStore") &&
+	//       this.$store.replaceState(
+	//         Object.assign(
+	//           this.$store.state,
+	//           JSON.parse(localStorage.getItem("messageStore"))
+	//         )
+	//       );
+	//   }
+	
+	
+	
+							// 获取vuex里面参数 
+	  // const state={}
+	// mapState和this.$store.state.sum
+	// 不建议在data里面赋值,监听不到改变 this.data里面的=this.$store.state.sum  不建议这样
+						// 第一种 
+	// this.$store.state.apis; 
+	
+	// 第二种	在计算属性中定义,然后{{apis}},推荐这种写法
+	// import { mapState } from 'vuex'
+	//   computed:{
+	// 	   ...mapState(["apis"])
+	// 	},
+	
+	
+	
+					// 修改vuex里面的参数   同步的  可以直接修改state
+					 // this.$store.commit和mapMutations  
+	// const mutations={}
+						//第一种写法			推荐第一种写法
+	// add是在vuex里面写的函数add的名字,后面是跟的参数
+	// this.$store.commit("add",20)
+	
+					//第二种写法    
+	// add后面填写参数,函数名字要和vuex里面的函数名字一样
+	// <button @click="add(5)">+20</button>
+	// import {  mapMutations  } from 'vuex'
+				//第一个参数写函数名,第二个参数随便写,传的是add后面的参数
+	//  ...mapMutations (["add",'dsds']),
+	
+	
+	
+					// 修改vuex里面的参数   异步的 actions
+					// this.$store.dispatch和mapActions
+					//不能直接修改state  action提交的是Mutation
+	//在vuex里面  num是参数,context是vuex函数总和,里面有commit
+	//vvv(context,num){
+			//要执行的异步操作  add是mutations中的方法,num是参数
+	// 		context.commit("add",num)
+	// }
+	
+	// 第一种写法 addhi函数  num是参数
+	// this.$store.dispatch("add",{num:20})
+	
+	//第二种写法
+	// <button @click="vvv(5)">+20</button>
+	// import {  mapActions  } from 'vuex'	
+	//  ...mapActions(["vvv","vvvv"]),
+	// vvv函数名,和vuex里面actions函数名一样 
+	//第一个参数写函数名,
+	// 第二个参数随便写,传的是vvv后面的参数
+
+	// Actions接受一个context对象参数，该参数具有和store实例相同的属性和方法，
+	// 所以我们可以通过context.commit()提交mutations中的方法，或者可以通过
+	// context.state和context.getters去获取state和getters。
+	
+	
+	// this.$store.getters.count1 和mapGetters
+	// ...mapGetters(["count1"])
+	
+	  
+</script>

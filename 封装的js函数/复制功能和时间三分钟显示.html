@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+	
+	<span id="context">内容</span>
+	<button type="button" data-clipboard-action="copy" 
+	data-clipboard-target="#context"
+	onclick="clone()"
+	id="clone"
+	>复制</button>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+<script type="text/javascript">
+	//复制功能函数
+	  function clone(){
+			var clipboard = new ClipboardJS('#clone');
+			clipboard.on('success', function(e) {
+				e.clearSelection();
+			});
+			clipboard.on('error', function(e) {
+				
+			});
+	}
+	
+	//时间三分钟显示一次
+	function gettime(arr) {
+	  var a = 0;
+	  return new Promise(open => {
+	    var length = arr.length - 1;
+	    for (var i in arr) {
+	      var item = arr[length - i];
+	      if (item.send_time - a > 180) {
+	        a = item.send_time;
+	        arr[length - i].send_time = item.send_time;
+	      } else {
+	        arr[length - i].send_time = null;
+	      }
+	    }
+	    console.log(arr);
+	    open(arr);
+	  });
+	},
+	
+</script>
