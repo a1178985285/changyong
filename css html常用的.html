@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		/* 禁止网页放大缩小 */
-		<!-- <meta  name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"  /> -->
-		
+		 <!-- 禁止网页放大缩小  移动端也写上 宽度默认等于屏幕的宽度-->
+<!-- <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'> -->
 		<title></title>
 		<style type="text/css">
+			
 			
 						/* css去除默认 */
 		/* * {
@@ -16,7 +16,11 @@
 		a {
 			text-decoration: none;
 		}
-		
+		input{ 
+		  background: none;
+			  outline: none;
+			  border: none;
+		}
 		button {
 			border: 0;
 			background-color: transparent;
@@ -30,9 +34,13 @@
 		ul li {
 			list-style: none;
 		} */
+		
+				/* 背景图片 */
+	/* 	background:url {./} no-repeat center; */
 			
 								/* 	css  响应式 */
-			/* @media (min-height:768px) and (max-height:1023px){
+			/*
+			 @media (min-height:768px) and (max-height:1023px){
 				.chat-room{
 					height: 88vh;
 				}
@@ -45,20 +53,25 @@
 							/* border添加边框 */
 			/* border-image: url(img/5d9d34ee29781.jpg); */
 			
-			/* div水平垂直居中
+			/* 
+			div水平垂直居中
 			    transform: translate(-50%,-50%);
 			    top:50%; 
-			    left: 50%; */
+			    left: 50%; 
+				*/
 		</style>
 		
 	</head>
 	<body>
 								<!-- html -->
-		<!-- 让a连接不去跳转页面，去支持js --> <!-- onclick有() ()是执行的意思-->
-		<!--    简单来说就是带括号的是执行一次函数，不带括号的函数就是一个函数对象 -->
-		<!-- <a href="javascript:void(0)" onclick="app(event)">11</a> -->
-		<!-- 
-		<img src="img/5d9d34ee29781.jpg" draggable="true"> -->
+<!-- 让a连接不去跳转页面，去支持js --> <!-- onclick有() ()是执行的意思-->
+<!--    简单来说就是带括号的是执行一次函数，不带括号的函数就是一个函数对象 -->
+<!-- <a href="javascript:void(0)" onclick="app(event)">11</a> -->
+<!-- 
+<img src="img/5d9d34ee29781.jpg" draggable="true"> -->
+		
+						<!-- 下载进度，value是下载的进度 -->
+<!-- <progress value="10" max="100" id="set"></progress> -->
 	
 <h3></h3>
 	</body>

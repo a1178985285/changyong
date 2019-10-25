@@ -29,19 +29,30 @@
 		// 	plus.device.dial("10010", false);
 		// }
 		
+							//跳到应用商城下载微信
+		var Uri = plus.android.importClass("android.net.Uri");
+		var uri = Uri.parse("market://details?id=" + 'com.tencent.mm' );  
+		var Intent = plus.android.importClass('android.content.Intent');  
+		var intent = new Intent(Intent.ACTION_VIEW, uri);  
+		var main = plus.android.runtimeMainActivity();  
+		main.startActivity(intent);  
+		
+		
 								//在线升级
-		// function plusReady() {
-		// 	// 获取本地应用资源版本号  
-		// 	plus.runtime.getProperty(plus.runtime.appid, function(inf) {
-		// 		wgtVer = inf.versionCode;
-		// 		console.log("当前应用版本：" + wgtVer);
-		// 		localStorage.setItem('newVer', wgtVer);
-		// 		if (localStorage.newVer != wgtVer) {
-		// 			window.localStorage.removeItem("newVer");
-		// 			localStorage.setItem('newVer', wgtVer);
-		// 		}
-		// 	});
-		// }
+	// html5新增的下载样式 value是现在的内容值
+	<!-- <progress value="10" max="100" id="set"></progress> -->
+		function plusReady() {
+			// 获取本地应用资源版本号  
+			plus.runtime.getProperty(plus.runtime.appid, function(inf) {
+				wgtVer = inf.versionCode;
+				console.log("当前应用版本：" + wgtVer);
+				localStorage.setItem('newVer', wgtVer);
+				if (localStorage.newVer != wgtVer) {
+					window.localStorage.removeItem("newVer");
+					localStorage.setItem('newVer', wgtVer);
+				}
+			});
+		}
 		
 		// function checkUpdate() {
 		// 	var checkUrl = "http://chat.zp600.com/api/api/check_version?version_id=" + localStorage.newVer;

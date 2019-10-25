@@ -1,2 +1,0 @@
-# changyong
-mine

@@ -54,6 +54,13 @@
                     //搜索
                     let list=this.orgList.filter(item=>item.indexOf(this.selectVal)>=0);
                     this.orgList=list;
+					
+									//加上这句字会变红
+					 // for (let key in list){                             
+						// list[key]=`<span style="color:red">${list[key]}</span>`
+						// 	}
+					 // console.log(this.selectVal)  
+					 
                     //当没有搜索内容时候，回去
                     if(this.selectVal===""){
                         this.orgList=JSON.parse(JSON.stringify(this.normal))
@@ -66,6 +73,6 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

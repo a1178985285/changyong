@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>楼层跳跃</title>
+        <style>
+			header{
+				height: 300px;
+				}
+            #box1<div {
+                width: 100%;
+                height: 500px;
+                line-height: 500px;
+                font-size: 100px;
+                color: aliceblue;
+                text-align: center
+                /* border: 1px solid #ccc; */
+            }
+            
+            #side-nav {
+                position: fixed;
+                left: 10px;
+                top: 100px;
+            }
+            
+            #side-nav li {
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
+                font-weight: 900;
+                text-align: center;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 2px 1px 3px 0 rgb(26, 25, 25);
+                cursor: pointer;
+                margin-bottom: 10px;
+            }
+            
+            .yellow {
+                background-color: yellow !important;
+            }
+			#go-top{
+				position: fixed;
+				bottom: 30px;
+				right: 30px;
+
+			}
+            
+
+        </style>
+        <script type="text/javascript">
+			
+					
+            window.onload = function() {
+				
+				
+				
+                var box = document.getElementById('box');
+                var lous = box.getElementsByTagName('div');//楼层
+                var sideNav = document.getElementById('side-nav');
+                var btns = sideNav.getElementsByTagName('li');//按钮
+				//回到顶部
+				var gotop=document.getElementById("go-top")
+                //1.把楼层的高度设置成屏幕的高度
+                for(var i = 0; i < lous.length; i++) {
+                    lous[i].style.height = window.innerHeight + 'px'
+                }
+				
+				
+                //2.点击按钮可以跳转到对应楼层
+                for(var i = 0; i < btns.length; i++) {
+                    //绑定索引
+                    btns[i].index = i;
+                    btns[i].onclick = function() {
+                        //排他
+                        for(var j = 0; j < btns.length; j++) {
+                            btns[j].className = '';
+                        }
+                        this.className = 'yellow';
+                        var ih = lous[this.index].offsetTop;
+                        window.scrollTo(0,ih);
+                    }
+                }
+                
+                //3.滚动滑轮，到达临界点的时候，按钮跟着高亮显示
+                window.onscroll = function() {
+					//第一个box盒子的高度
+					 var oneTop=lous[0].offsetTop
+					 var scrollTop = window.scrollY;
+				   if(window.scrollY>=oneTop){
+					   sideNav.style.display="block"
+					   gotop.style.display="block"
+				   }else{
+					   sideNav.style.display="none"
+					   gotop.style.display="none"
+				   }
+                   //滚动距离
+                    for(var i = 0; i < lous.length; i++) {
+                        if(scrollTop >= lous[i].offsetTop) {
+                            //排他 设置高亮
+                            for(var j = 0; j < btns.length; j++) {
+                                btns[j].className = '';
+                            }
+                            btns[i].className = 'yellow';
+                        }
+                    }
+                }
+				
+				//回到顶部
+				gotop.onclick = function(){
+						scrollToptimer = setInterval(function () {
+						    console.log("定时循环回到顶部")
+						    var top = document.body.scrollTop || document.documentElement.scrollTop;
+						    var speed = top / 4;
+						    if (document.body.scrollTop!=0) {
+						        document.body.scrollTop -= speed;
+						    }else {
+						        document.documentElement.scrollTop -= speed;
+						    }
+						    if (top == 0) {
+						        clearInterval(scrollToptimer);
+						    }
+						}, 30);
+				}
+            }
+        </script>
+    </head>
+    <body>
+		
+		<header>444</header>
+        <div id="box">
+            <div id="box1">a
+			</div>
+            <div id="box2">B</div>
+            <div id="box3">C</div>
+            <div id="box4">D</div>
+            <div id="box5">E</div>
+            <div id="box6">F</div>
+            <div id="box7">G</div>
+            <div id="box8">H</div>
+            <div id="box9">I</div>
+            <div id="box10">J</div>
+        </div>
+        <nav>
+            <ul id="side-nav"  style="display: none;">
+                <li class="yellow">F1</li>
+                <li>F2</li>
+                <li>F3</li>
+                <li>F4</li>
+                <li>F5</li>
+                <li>F6</li>
+                <li>F7</li>
+                <li>F8</li>
+                <li>F9</li>
+                <li>F10</li>
+            </ul>
+        </nav>
+		<div id="go-top" style="display: none;">
+			回到顶部
+		</div>
+    </body>
+
+</html>

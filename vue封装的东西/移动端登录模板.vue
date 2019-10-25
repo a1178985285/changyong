@@ -1,20 +1,20 @@
  <template>
   <div class="big">
     <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" class="demo-ruleForm">
-      <el-form-item prop="username" class="input-box" style="margin-bottom:20px">
+      <el-form-item prop="user" class="input-box" style="margin-bottom:20px">
         <el-input
-          v-model="ruleForm2.username"
+          v-model="ruleForm2.user"
           placeholder="请输入用户名"
           clearable
           prefix-icon="el-icon-user-solid"
         ></el-input>
       </el-form-item>
 
-      <el-form-item prop="pass" class="input-box">
+      <el-form-item prop="password" class="input-box">
         <el-input
           type="password"
           placeholder="请输入密码"
-          v-model="ruleForm2.pass"
+          v-model="ruleForm2.password"
           auto-complete="off"
           clearable
           prefix-icon="el-icon-lock"
@@ -35,15 +35,15 @@ export default {
   data() {
     return {
       ruleForm2: {
-        username: "",
-        pass: ""
+        user: "",
+        password: ""
       },
       rules2: {
-        username: [
+        user: [
           { required: true, message: "请输入用户名", trigger: "blur" },
-          { type: "string", min: 4, message: "用户名最少4位", trigger: "blur" }
+          { type: "string", min: 3, message: "用户名最少4位", trigger: "blur" }
         ],
-        pass: [
+        password: [
           { required: true, message: "请输入密码", trigger: "blur" },
           { type: "string", min: 6, message: "密码最少6位", trigger: "blur" }
         ]
@@ -77,25 +77,34 @@ export default {
           };
           this.axios
             .post(
-              this.$store.state.apis + "/api/api_login/login",
+			//url
+              "http://chat.zp600.com/api/api_login/login",
               this.ruleForm2,
               config
             )
             .then(res => {
+			console.log( this.ruleForm2)
               console.log(res);
-              if (res.data) {
+              var msg=res.data.msg
+              if (res.data.state === 1) {
                 this.$message({
-                  message: "登录成功",
+                  message: msg,
                   type: "success",
                     center: true
                 });
+				//路由跳转
+                this.$router.push({
+                    path:"./a"
+                })
                 //存uid
                 localStorage.setItem("uid", res.data.uid);
                 localStorage.setItem("userName", this.formInline.user);
                 localStorage.setItem("userPwd", this.formInline.password);
               } else {
+				  //错误
+			   var msg=res.data.msg
                  this.$message({
-                  message: "登录失败",
+                  message: msg,
                   type: "error",
                     center: true
                 });
