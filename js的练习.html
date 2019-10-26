@@ -207,10 +207,39 @@
 			// 	a2+=a1[key]		
 			// }
 			// console.log(a2)
-	
-
 			
-
+			
+			// try里面错误的会执行catch里面的,finally里面的一定会被执行
+	// 		try{
+	// 			var a=1
+	// 			console.log(b)
+	// 		}catch(e){
+	// 			console.log("我会执行错误的")
+				
+	// 		}finally{
+	// 			console.log("我一定会被执行")
+	// 		}
+	
+						//浏览器和dom
+	 //   window.innerWidth  获取浏览器窗口内部的宽度,净宽
+	 //建议这样
+	 //var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+	 //   screen.width       获取屏幕的宽度
+	// location.protocol  获取到http
+	// location.assign('/'); 设置一个新的URL地址	
+	// location.reload();  刷新当前页面
+	// document.title     设置title
+	//document.cookie   获取cookie
+	
+	//获取id是test-table下面的所有li
+	// var trs = document.getElementById('test-table').getElementsByTagName('li');
+	//获取trs下面的所有子节点
+	// trs.children
+	
+	
+	
+	
+	
 	// function setCookieValue(key,value){
 	//     var date = new Date();
 	//      var dataO=date.setTime(date.getTime()+100*24*3600*1000);
@@ -218,6 +247,7 @@
 	// }
 	// 
 	// setCookieValue()
+	
 	// 
 	// 
 	//正则
