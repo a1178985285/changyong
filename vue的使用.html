@@ -9,37 +9,51 @@
 	</body>
 </html>
 <script type="text/javascript">
-						//vue-cli3安装
+							vue-cli3安装
 	// npm install -g @vue/cli
 	// npm install -g cnpm -registry=https://registry.npm.taobao.org 
 	// vue create 名字
 
-							//Vue传参
+							Vue传参
 	//   this.$router.push({path:"./b",query:{pass:this.pass}})
 	// 接受
 	// 	this.$route.query.pass
 	
-	// vue引入图片的方式
+							vue引入图片的方式
 	//  src
 	// require("../../../assets/img/one.jpg"),
-
-							//axios拼接
+					//动态引入图片 动态引入必须加上require
+	// :src="imag"
+	//data里面   imag:requier("../img/")
+		//或者
+	// :src="require('../img/my.png')"
+	
+	
+							axios拼接
 	// this.axios.get("http://192.168.31.172/index/index/login?username="+this.formInline.username+"&key="+this.formInline.key)
 
 
-							//双向绑定class
+							双向绑定class
+	//三元表达式
 	// v-bind:class="[value.userinfo.id==uid ?'chat-room-info-img-right':'chat-room-info-img' ]"
+	//判断是否绑定一个active
+	// :class="{'active':isActive==-1}"
+	//判断绑定并判断多个  一个active和一个sort  isActive,isSort是data里面的
+	//支持这种写法,一个class和一个:class
+	// class="activeOne" :class="{ 'active': isActive, 'sort': isSort }"
 
 
-						//vue watch监听新值旧值
-	//  watch: {
-	//     noymod(o, n) {
-	// o新  n旧
-	//     },
-	// }
-
-
-						//fullName未在data里面定义 computed
+						缓存
+	// 写在app.vue里面 include后面跟名字,名字在每个.vue里面起
+ //    <keep-alive  include="friend,mine"></keep-alive> 
+	
+	// <transition> 包裹住keep-alive可以让他有动画效果
+	
+					注册组件
+	//全局 Vue.component('home',home)
+	//局部 components:{home}
+	
+						fullName未在data里面定义 computed
 	// 可以通过computed取值和定义  当取这个属性值的时候get方法会被执行
 	//当设置这个属性值的时候set方法会被执行
 	// <h2>{{fullName}}</h2>
@@ -58,7 +72,7 @@
 	//    }, 
 
 
-					// $set()  可以改变数组也可以改变对象
+				$set()  可以改变数组也可以改变对象
 	// vue检测不到对象属性的添加或删除,所以属性必须在 data 对象上才能让 Vue.js 转换它
 	// 使用$set()方法，既可以新增属性,又可以触发视图更新。
 	// this.student是data里面的,name是给data里面的this.student新增的,没有在data挂载
@@ -67,7 +81,7 @@
 	// this.$set(this.obj, "c", "age");  改变对象
 
 
-							//filters  过滤
+							filters  过滤
 	//可以自定义  可以定义全局的,也可以定义局部的
 	// 可以写双括号里面,也可以写在class
 	// {{message | filet("arg1","arg2")}}
@@ -77,7 +91,12 @@
 	//          }  
 	//  },
 
-							//watch 监听  
+							watch 监听  		
+	//  watch: {
+	//     noymod(o, n) {
+	// o新  n旧
+	//     },
+	// }
 	// 值第一次绑定的时候，不会执行监听函数，只有值发生改变才会执行
 	// 设置  立即执行 immediate: true
 	
@@ -99,13 +118,16 @@
 	// 	}
 	// 	}
 	
-	//获取滚动条滚动的距离
+						获取滚动条滚动的距离
 	 // mounted() {
 	 //        window.addEventListener('scroll', () => {
 	 //        let top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
 	 //        console.log(top);
 	 //      })
 	 //    },
+	
+	// @click="click($event,'a','b')"
+	// click(e,...a)  a会直接接受后面的其他,形成一个1数组
 	
 	// beforeCreate   开始loading
 	// created        结束loading,不能操作dom
