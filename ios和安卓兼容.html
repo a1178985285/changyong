@@ -8,55 +8,96 @@
 	</body>
 </html>
 <script type="text/javascript">
-						//时间问题  
+	
+	postcss
+						时间问题  
 			//将xxxx-xx-xx的时间格式，转换为 xxxx/xx/xx的格式 
 	// var value = '2018-07-25 19:25';
 	// value = value.replace(/\-/g, "/");
 	// console.log(value)
+	//new Date()不生效 加上T
+	//new Date('2018-12-20T23:59:59').getTime()
 
 
-					// 禁止 iOS 识别长串数字为电话
+					 禁止 iOS 识别长串数字为电话
 	// <meta name="format-detection" content="telephone=no">
+					禁止email识别
+	// <meta content="email=no" name="format-detection">
 	
-				// input加上
-	// -webkit-appearance: none;
-	
-				//在ios中解决滑动无惯性
-	// body {
-	// -webkit-overflow-scrolling: touch;
-	// overflow-scrolling: touch;
+				 input加上 不然样式会被默认的覆盖掉
+	// input,textarea {
+	//   border: 0;
+	//   -webkit-appearance: none;
 	// }
+					在ios中解决滑动无惯性
+	//box要除去header footer
+	.box{
+			// overflow-scrolling: touch;
+		// -webkit-overflow-scrolling: touch;
+	}
+	
+			 IOS中li按下会有阴影效果
+	// ul li{
+	// 	 -webkit-tap-highlight-color: transparent;
+	// }
+	
+		 取消input在输入的时候英文首字母的默认大写
+	// <input autocapitalize="off" autocorrect="off" />
+		//input字母和数字会红色的下划线,取消
+	 // spellcheck ="false"
 	    
-				//ios中固定定位
+				ios中固定定位
 	// 只需要在中间部分外层div添加css样式
 	// position:fixed;
 	// top:50px; 
 	// bottom:50px;
-	// overflow:scroll;。
+	// overflow:scroll;
 	
-				// IOS中li按下会有阴影效果
-	// -webkit-tap-highlight-color: transparent;
-	
-					
-						// 禁止页面缩放
-// <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
-// 这样设置在ios10系统中是失效的
-	//       document.addEventListener('touchstart',function (event) {  
-	//             if(event.touches.length>1){  
-	//                 event.preventDefault();  
-	//             }  
-	//         })  
-	//         var lastTouchEnd=0;  
-	//         document.addEventListener('touchend',function (event) {  
-	//             var now=(new Date()).getTime();  
-	//             if(now-lastTouchEnd<=300){  
-	//                 event.preventDefault();  
-	//             }  
-	//             lastTouchEnd=now;  
-	//         },false);
-	//       禁止手势放大
-	//       document.addEventListener('gesturestart', function (event) {
-	//          event.preventDefault();
-	//       });
-	// }
+
+						禁止页面缩放  这样设置在ios10系统中是失效的
+//<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+							兼容ios10
+	      // document.addEventListener('touchstart',function (event) {  
+	      //       if(event.touches.length>1){  
+	      //           event.preventDefault();  
+	      //       }  
+	      //   })  
+	      //   var lastTouchEnd=0;  
+	      //   document.addEventListener('touchend',function (event) {  
+	      //       var now=(new Date()).getTime();  
+	      //       if(now-lastTouchEnd<=300){  
+	      //           event.preventDefault();  
+	      //       }  
+	      //       lastTouchEnd=now;  
+	      //   },false);
+						禁止手势放大
+	      // document.addEventListener('gesturestart', function (event) {
+	      //    event.preventDefault();
+	      // });
+		  
+		  
+		  //全局引入  解决iOS中获取到焦点之后无法回去
+		  var u = navigator.userAgent;
+		      var flag;
+		      var myFunction;
+		      var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+		      if (isIOS) {
+		          document.body.addEventListener('focusin', () => {  //软键盘弹起事件
+		              flag = true;
+		              clearTimeout(myFunction);
+		          })
+		          document.body.addEventListener('focusout', () => { //软键盘关闭事件
+		              flag = false;
+		              if (!flag) {
+		                  myFunction = setTimeout(function () {
+		  					//当键盘收起的时候让页面回到原始位置(这里的bottom可以根据你们个人的需求改变，并不一定要回到页面底部)
+		                      window.scrollTo({ bottom: 0, left: 0, behavior: "smooth" })
+		                  }, 200);
+		              } else {
+		                  return false
+		              }
+		          })
+		      }
+		 
+
 </script>

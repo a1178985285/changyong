@@ -9,18 +9,18 @@
 			
 			
 						/* css去除默认 */
-		/* * {
-			margin: 0;
-			padding: 0;
-		}
+		   *{
+		      margin: 0;
+		      padding: 0;
+		    }
 		a {
 			text-decoration: none;
 		}
-		input{ 
-		  background: none;
-			  outline: none;
-			  border: none;
-		}
+		 input{ 
+		      background: none;
+		      border: none;
+		        outline: none;
+				}
 		button {
 			border: 0;
 			background-color: transparent;
@@ -33,7 +33,7 @@
 		
 		ul li {
 			list-style: none;
-		} */
+		} 
 		
 			/* 设置根元素 html */
 		/* :root{
@@ -48,8 +48,9 @@
 		
 				/* 背景图片 */
 	/* 	background:url {./} no-repeat center; */
-			
-								/* 	css  响应式 */
+	/* 渐变色 */
+		/* linear-gradient(to right, #ff9569 0%, #e92758 100%);、 */
+						/* 	css  响应式 */
 			/*
 			 @media (min-height:768px) and (max-height:1023px){
 				.chat-room{
@@ -57,7 +58,7 @@
 				}
 			} */
 			
-										/* ~表示
+								/* ~表示
 			p~ul选择器 p之后出现的所有ul。两种元素必须拥有相同的父元素，但是 ul不必直接紧随 p。
 			 */
 			
@@ -70,6 +71,32 @@
 			    top:50%; 
 			    left: 50%; 
 				*/
+	:hover  
+	:focus  获得焦点的时候
+	:active 伪类,元素被激活时的样式,例如鼠标点击了下但还没有松开时候
+	:checked  每个选中的输入元素,为选中的设置,用于单选框和复选框		   
+					css3动画
+			transition  动效  
+   当高发生改变时候,有一个0.5秒曲线的动画 all是所有/
+   第一个参数, CSS 属性的名称,如height all
+   第二个参数,动画多少秒或毫秒才能完成
+   第三个参数,效果的转速曲线 linear 相同速度开始到结束,ease规定慢速开始，然后变快
+   第四个参数,效果开始的时候,延迟时间
+ /*  transition: height 2s ease .5s; */
+				transform  转换 改变元素外观,如位移,缩放
+可以配合起来用transform: rotate(-45deg) scale(1.5);
+	translate 位移  x,y轴的距离,px和%都可以
+		transform:translate (100px,50%);
+	scale    缩放  	x,y轴的距离
+		transform:scale(1.5,1.4);   scaleY(1.2)
+	rotate    旋转    x,y轴的距离 0 ~ 360 度之间，负值均可
+		transform:rotate(20deg,-30deg);
+	skew 	倾斜,拉伸    x,y轴的距离 0 ~ 360 度之间，负值均可
+		transform:skew(20deg,-30deg);
+	matrix	6个值
+		第一个参数,水平缩放比例,默认1 二:缩放 三:缩放 四:垂直方向缩放比例
+		五:水平方向位移 六:垂直方向位移
+		transform:matrix(1,0,0,1,30,30);
 		</style>
 		
 	</head>

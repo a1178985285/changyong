@@ -1,0 +1,41 @@
+
+git上传
+https://blog.csdn.net/m0_37725003/article/details/80904824
+修改上传
+https://blog.csdn.net/u014361280/article/details/81387311  
+git init 初始化本地仓库
+git config --global user.name 'a1178985285'
+git config --global user.email '1178985285@qq.com'
+git clone https://gitee.com/gerdengo/Download-Station.git
+
+git config --list 查看配置信息
+
+git status 查询状态
+
+git add . 更新暂存区
+git commit -m “提交信息”
+
+git log 查看历史提交
+
+git reset HEAD 拉回本地到服务器版本
+
+git remote -v 查看所有远程仓库
+
+git branch 查看当前属于哪个分支
+
+git branch +名称 创建分支
+
+git checkout  online 切换分支
+
+git checkout -b +名称 创建并切换分支
+
+1.我先把dev拉到我的本地：git checkout -b dev origin/dev 
+
+2.为了使本地代码与远程仓库的保持一致：git pull
+
+3.想确认是否一致：git diff origin/dev
+
+4.合并代码：git merge master
+
+git pull --rebase origin master 将远程仓库 合并到本地 （远程有修改时）
+git pull origin master
