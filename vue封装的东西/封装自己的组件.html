@@ -8,7 +8,7 @@
 	</body>
 </html>
 
-						<!-- 不需要传参步骤 -->
+						不需要传参步骤
 <!-- 写一个组件headertit.vue 
 然后在另一个文件里面引入
 import headertit from "../../components/headertit/index";
@@ -19,18 +19,22 @@ components:{
 然后直接使用 <headertit></headertit> -->
 
 
-				<!-- 封装的组件需要传参步骤 -->
-								<!-- 父传子 -->  
+				封装的组件需要传参步骤
+								父传子  
 				 <!-- headertit.vue是子组件  e.vue是父组件 -->
-  <!--    在headertit.vue里面传   props:{app:[String]}		    <div class="box">{{app}}</div>
+  <!--    在headertit.vue里面传 
+  	<div class="box">{{title}}</div>
+	props:{title:String}		  
 	 在e.vue里面引入，注册一下 
 	 import headertit from "../../components/headertit/index";
 	  components:{
 	                 headertit
 	         },
+	<headertit :title="biaoti"/>
 		然后直接写	 
-	<headertit :app="data里面定义的东西"    这里面写传过去的参数></headertit> -->
-<!-- 就是说引用的headerit这个组件，但是headerit里面没有内容，内容在e.vue里面获取到的，获取到的东西传给headerit，
+	<headertit :title="data里面定义的东西"    这里面写传过去的参数></headertit> -->
+<!-- 就是说引用的headerit这个组件，但是headerit里面没有内容，
+内容在e.vue里面获取到的，获取到的东西传给headerit，
 然后引用headerit，所以叫父传子 -->
 
 						<!-- 子传父 -->

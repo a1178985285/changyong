@@ -34,12 +34,14 @@
 
 
 							双向绑定class
-						
-	//三元表达式
+	点击切换类名
+	//<div :class="[isA?'active':'activ']" @click="onclicks"></div>		
+	三元表达式
 	// v-bind:class="[value.userinfo.id==uid ?'chat-room-info-img-right':'chat-room-info-img' ]"
-	//判断是否绑定一个active
+	判断是否绑定一个active
 	// :class="{'active':isActive==-1}"
-	//判断绑定并判断多个  一个active和一个sort  isActive,isSort是data里面的
+	判断绑定并判断多个
+	// 一个active和一个sort  isActive,isSort是data里面的
 	//支持这种写法,一个class和一个:class
 	// class="activeOne" :class="{ 'active': isActive, 'sort': isSort }"
 
@@ -51,10 +53,11 @@
 	// <transition> 包裹住keep-alive可以让他有动画效果
 	
 					注册组件
+	
 	//全局 Vue.component('home',home)
 	//局部 components:{home}
 	
-						fullName未在data里面定义 computed
+					fullName未在data里面定义 computed
 	// 可以通过computed取值和定义  当取这个属性值的时候get方法会被执行
 	//当设置这个属性值的时候set方法会被执行
 	// <h2>{{fullName}}</h2>

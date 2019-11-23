@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/less">
+		声明
+	/* 	 @color: #999;  声明时候.big和 @big: 是一样的
+		
+		 .big{
+		 	color: @color;
+		 };
+		 @big:{
+		 	color: @color;
+		 }; */
+		 
+		 嵌套直接写   &代表上一级
+		/* .big{
+			 &:hover{
+				 
+			 }
+			 .tilte{
+				 
+			 }
+		 } */
+		 
+		 @arguments可以代替任何，只参数，用于只有一个不一样的时候
+		 @a:red 定义的是默认的
+		/* .big(@a:red){   		
+		 	width: 100px; 
+		 	height: 100px;
+			background:@arguments;   @arguments参数
+		 }; */
+		 调用时候实参
+		 /* .bigg{
+		 	 .big(blue);  
+		 } */
+		 
+		 接受数量不定的参数，你可以使用... 和上面差不多
+		/* .big(...){
+		 	 box-shadow: @arguments;
+		 };
+		 .bigg{
+		 	 .big(1px,4px,30px,red);
+		 } */
+		 
+		 extend是继承
+		 /* .big{
+			 width: 100px;
+			 .bigg{
+			 	$:extend(.big)		 
+			 }
+		 } */
+		 
+		 
+		 
+	</style>
+	<body>
+	</body>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.10.0-beta/less.min.js" ></script>
+	<script type="text/javascript">
+		
+	</script>
+</html>
